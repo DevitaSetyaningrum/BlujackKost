@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                // Toast.makeText(MainActivity.this,"Clicked Item Is : " + list.get(pos),
                  //       Toast.LENGTH_SHORT).show();
 
+
                 Intent intent = new Intent(MainActivity.this, KostDetail.class);
                 startActivity(intent);
             }
