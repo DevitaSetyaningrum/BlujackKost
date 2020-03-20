@@ -43,7 +43,7 @@ public class ListKostAdapter  extends RecyclerView.Adapter<ListKostAdapter.Categ
     }
 
     @Override
-    public void onBindViewHolder(final CategoryViewHolder holder, int position) {
+    public void onBindViewHolder(final CategoryViewHolder holder, final int position) {
         holder.tvName.setText(getListKost().get(position).getName());
         holder.tvPrice.setText(getListKost(). get(position). getPrice());
         holder.tvFacility.setText(getListKost().get(position).getFacility());
@@ -53,6 +53,16 @@ public class ListKostAdapter  extends RecyclerView.Adapter<ListKostAdapter.Categ
                 .load(R.drawable.kost4)
                 .override(55, 55)
                 .into(holder.imgPhoto);
+
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               // itemListener.onItemClick(position);
+                Toast.makeText(context, itemListener+"interface", Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
 
     }
