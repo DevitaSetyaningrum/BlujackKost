@@ -29,22 +29,6 @@ public class MainActivity extends AppCompatActivity {
         list = new ArrayList<>();
         list.addAll(KostData.getListData());
 
-        adapter = new ListKostAdapter(this);
-        rvCategory.setAdapter(adapter);
-
-        adapter.setOnItemClickListener(new ItemListener() {
-            @Override
-            public void onItemClick(int pos) {
-
-               Toast.makeText(MainActivity.this,"Clicked Item Is : " + list.get(pos),
-                        Toast.LENGTH_SHORT).show();
-
-
-                Intent intent = new Intent(MainActivity.this, KostDetail.class);
-                startActivity(intent);
-            }
-        });
-
         showRecyclerList();
 
     }
@@ -54,6 +38,19 @@ public class MainActivity extends AppCompatActivity {
         ListKostAdapter listKostAdapter = new ListKostAdapter(this);
         listKostAdapter. setListKost(list);
         rvCategory.setAdapter(listKostAdapter);
+
+        adapter.setOnItemClickListener(new ItemListener() {
+            @Override
+            public void onItemClick(int pos) {
+
+                Toast.makeText(MainActivity.this,"Clicked Item Is : " + list.get(pos),
+                        Toast.LENGTH_SHORT).show();
+
+
+                Intent intent = new Intent(MainActivity.this, KostDetail.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
