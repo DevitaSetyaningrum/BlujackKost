@@ -2,10 +2,13 @@ package com.example.blujackkost;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -39,18 +42,20 @@ public class ListKostAdapter  extends RecyclerView.Adapter<ListKostAdapter.Categ
     }
 
     @Override
-    public void onBindViewHolder(CategoryViewHolder holder, int position) {
+    public void onBindViewHolder(final CategoryViewHolder holder, int position) {
         holder.tvName.setText(getListKost().get(position).getName());
         holder.tvPrice.setText(getListKost(). get(position). getPrice());
         holder.tvFacility.setText(getListKost().get(position).getFacility());
 
 
         Glide.with(context)
-                .load(getListKost().get(position).getPhoto())
+                .load(R.drawable.kost4)
                 .override(55, 55)
                 .into(holder.imgPhoto);
 
+
     }
+
 
 
     @Override

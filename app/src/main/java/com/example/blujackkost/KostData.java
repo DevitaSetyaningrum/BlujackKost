@@ -5,12 +5,8 @@ import java.util.ArrayList;
 public class KostData {
 
     public  static String [][] data = new String [][]{
-            {"Maharaja", "1450000", "Ac, WiFi, Bathroom", "https://id.pinterest.com/pin/756886281099389951/"},
-            {"Haji Indra", "1900000", "AC, WiFI", "https://id.pinterest.com/pin/766104586583582266/"},
-            {"Haji Indra", "1900000", "AC, WiFI", "https://id.pinterest.com/pin/797418677746230200/"},
-            {"Haji Indra", "1900000", "AC, WiFI", "https://id.pinterest.com/pin/513621532494309951/"},
-            {"Haji Indra", "1900000", "AC, WiFI", "https://id.pinterest.com/pin/766104586583582266/"}
-
+            {"Maharaja", "1450000", "Ac, WiFi, Bathroom", R.drawable.kost3+""},
+            {"Haji Indra", "1900000", "AC, WiFI", R.drawable.kost4+""}
 
     };
 
