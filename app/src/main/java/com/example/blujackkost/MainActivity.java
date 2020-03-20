@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(int pos) {
 
-               // Toast.makeText(MainActivity.this,"Clicked Item Is : " + list.get(pos),
-                 //       Toast.LENGTH_SHORT).show();
+               Toast.makeText(MainActivity.this,"Clicked Item Is : " + list.get(pos),
+                        Toast.LENGTH_SHORT).show();
 
 
                 Intent intent = new Intent(MainActivity.this, KostDetail.class);
