@@ -19,6 +19,7 @@ import java.util.ArrayList;
 public class ListKostAdapter  extends RecyclerView.Adapter<ListKostAdapter.CategoryViewHolder> {
 
     private Context context;
+    ItemListener itemListener;
 
     ArrayList<Kost> getListKost(){
         return listKost;
@@ -75,5 +76,14 @@ public class ListKostAdapter  extends RecyclerView.Adapter<ListKostAdapter.Categ
 
              imgPhoto = itemView.findViewById(R.id.img_item_photo);
          }
+     }
+
+     public void setOnItemClickListener(ItemListener itemListener){
+        this.itemListener = itemListener;
+     }
+     public static class ListenerHolder extends RecyclerView.ViewHolder{
+        public ListenerHolder(View itemView){
+            super(itemView);
+        }
      }
 }

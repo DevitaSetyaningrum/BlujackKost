@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView rvCategory;
     private ArrayList<Kost> list;
+    ListKostAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,21 @@ public class MainActivity extends AppCompatActivity {
 
         list = new ArrayList<>();
         list.addAll(KostData.getListData());
+
+        adapter = new ListKostAdapter(this);
+        rvCategory.setAdapter(adapter);
+
+        adapter.setOnItemClickListener(new ItemListener() {
+            @Override
+            public void onItemClick(int pos) {
+
+               // Toast.makeText(MainActivity.this,"Clicked Item Is : " + list.get(pos),
+                 //       Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(MainActivity.this, KostDetail.class);
+                startActivity(intent);
+            }
+        });
 
         showRecyclerList();
 
