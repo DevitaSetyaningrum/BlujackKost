@@ -46,21 +46,20 @@ public class ListKostAdapter  extends RecyclerView.Adapter<ListKostAdapter.Categ
         holder.tvName.setText(getListKost().get(position).getName());
         holder.tvPrice.setText(getListKost(). get(position). getPrice());
         holder.tvFacility.setText(getListKost().get(position).getFacility());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, position+"", Toast.LENGTH_SHORT).show();
+                itemListener.onItemClick(position);
+               // Toast.makeText(context, itemListener+"interface", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
         Glide.with(context)
                 .load(R.drawable.kost4)
                 .override(55, 55)
                 .into(holder.imgPhoto);
-
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                itemListener.onItemClick(position);
-               // Toast.makeText(context, itemListener+"interface", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     @Override

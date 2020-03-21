@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 public class KostDetail extends AppCompatActivity {
@@ -44,14 +46,26 @@ public class KostDetail extends AppCompatActivity {
         Intent intent = getIntent();
         //String
         save = intent.getIntExtra("pos", 0);
-        String Name = list.get(save).getName();
-        String Facility = list.get(save).getFacility();
-        String Price = list.get(save).getPrice();
-        String Description = list.get(save).getDescription();
-        String Latitude = list.get(save).getLatitude();
-        String Longtitude = list.get(save).getLongtitude();
-        String ivPhoto = list.get(save).getPhoto();
+        String strName = list.get(save).getName();
+        String strFacility = list.get(save).getFacility();
+        String strPrice = list.get(save).getPrice();
+        String strDescription = list.get(save).getDescription();
+        String strLatitude = list.get(save).getLatitude();
+        String strLongtitude = list.get(save).getLongtitude();
+        String strivPhoto = list.get(save).getPhoto();
         startActivity(intent);
+
+        Name.setText(strName);
+        Facility.setText(strFacility);
+        Price.setText(strPrice);
+        Description.setText(strDescription);
+        Latitude.setText(strLatitude);
+        Longtitude.setText(strLongtitude);
+//
+//        Glide.with(this)
+//                .load(R.drawable.kost4)
+//                .override(55, 55)
+//                .into(ivPhoto);
 
     }
 }
