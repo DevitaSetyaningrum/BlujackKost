@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView rvCategory;
     private ArrayList<Kost> list;
-    ListKostAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         listKostAdapter. setListKost(list);
         rvCategory.setAdapter(listKostAdapter);
 
-        adapter.setOnItemClickListener(new ItemListener() {
+        listKostAdapter.setOnItemClickListener(new ItemListener() {
             @Override
             public void onItemClick(int pos) {
 
@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
 
                 Intent intent = new Intent(MainActivity.this, KostDetail.class);
+                intent.putExtra("pos", pos);
+                Toast.makeText(MainActivity.this, pos+"passing", Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
         });

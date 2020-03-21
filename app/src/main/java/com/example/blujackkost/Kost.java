@@ -1,7 +1,31 @@
 package com.example.blujackkost;
 
 public class Kost {
-    private String name, price, facility, photo;
+    private String name, price, facility, photo, description, latitude, longtitude;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongtitude() {
+        return longtitude;
+    }
+
+    public void setLongtitude(String longtitude) {
+        this.longtitude = longtitude;
+    }
 
     public String getName() {
         return name;

@@ -27,7 +27,6 @@ public class ListKostAdapter  extends RecyclerView.Adapter<ListKostAdapter.Categ
 
     void setListKost(ArrayList<Kost> listKost){
         this.listKost=listKost;
-
     }
 
     private ArrayList<Kost> listKost;
@@ -58,16 +57,11 @@ public class ListKostAdapter  extends RecyclerView.Adapter<ListKostAdapter.Categ
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // itemListener.onItemClick(position);
-                Toast.makeText(context, itemListener+"interface", Toast.LENGTH_SHORT).show();
-
+                itemListener.onItemClick(position);
+               // Toast.makeText(context, itemListener+"interface", Toast.LENGTH_SHORT).show();
             }
         });
-
-
     }
-
-
 
     @Override
     public int getItemCount() {
