@@ -123,7 +123,7 @@ public class RegisterActivity extends AppCompatActivity {
         } else if(Pattern.compile(" (?=.*\\d)(?=.*[a-z])(?=.*[A-Z])").matcher(et_Pass.getText().toString()).find()){
             et_Pass.setText("password must contain at least 1 lowercase letter, 1 uppercase letter and 1 digit");
         }
-        
+
         if(etConfirmPass.getText().toString().length()==0){
             etConfirmPass.setText("Password must be filled!");
         } else if(etConfirmPass.equals(et_Pass)){
@@ -137,5 +137,11 @@ public class RegisterActivity extends AppCompatActivity {
         } else if(Pattern.compile("[0-9]").matcher(etPhone.getText().toString()).find()){
 
         }
+
+        if (rgGender.getCheckedRadioButtonId()==-1){
+            // buat nampilin pesannya
+        }
+
+        if ()
     }
 }
