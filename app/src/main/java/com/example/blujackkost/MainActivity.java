@@ -10,12 +10,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.blujackkost.Model.DataKosModel;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView rvCategory;
-    private ArrayList<Kost> list;
+    private ArrayList<DataKosModel> list;
 
 
     @Override
@@ -27,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         rvCategory.setHasFixedSize(true);
 
         list = new ArrayList<>();
-        list.addAll(KostData.getListData());
+        list.addAll(DataArray.getListData());
 
         showRecyclerList();
 

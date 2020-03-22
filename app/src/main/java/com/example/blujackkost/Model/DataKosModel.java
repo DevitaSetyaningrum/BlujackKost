@@ -1,6 +1,6 @@
-package com.example.blujackkost;
+package com.example.blujackkost.Model;
 
-public class Kost {
+public class DataKosModel {
     private String name, price, facility, photo, description, latitude, longtitude;
 
     public String getDescription() {

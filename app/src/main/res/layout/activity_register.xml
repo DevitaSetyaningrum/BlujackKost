@@ -93,6 +93,7 @@
         />
 
     <Button
+        android:onClick="onClickRegisregis"
         android:gravity="center"
         android:layout_gravity="center"
         android:id="@+id/btnRegis"

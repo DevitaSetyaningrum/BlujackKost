@@ -14,20 +14,29 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.util.regex.Pattern;
+
 
 import java.util.Calendar;
+
+import static android.view.View.Z;
 
 public class RegisterActivity extends AppCompatActivity {
 
     RadioGroup rgGender;
     RadioButton Male, Female;
-    Button btnGetDate;
+    Button btnGetDate, Register;
     TextView tvDate;
     DatePickerDialog picker;
-    EditText etPicker;
+    EditText  etPicker, et_Username, et_Pass, etConfirmPass, etPhone;
     CheckBox checkbox;
 
     void validasi (){
+        etPhone = findViewById(R.id.etPhoneNumber);
+        Register = findViewById(R.id.btnRegis);
+        et_Username = findViewById(R.id.et_username);
+        et_Pass = findViewById(R.id.et_pass);
+        etConfirmPass = findViewById(R.id.etComfrimPass);
         rgGender = findViewById(R.id.rggGender);
         Male = findViewById(R.id.rbMale);
         Female = findViewById(R.id.rbFemale);
@@ -44,6 +53,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         validasi();
+
 
         rgGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -94,8 +104,38 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
+    }
 
+    public void onClickRegisregis(View view) {
 
+        if(et_Username.getText().toString().length()<3 || et_Username.getText().toString().length()>=25){
+            et_Username.setText("Please input your username between 3 and 25 characters!");
+        } else if (et_Username.getText().toString().length()==0){
+            et_Username.setText("Username must be filled!");
+        }else if (Pattern.compile("[A-Za-z0-9]").matcher(et_Username.getText().toString()).find()){
+            et_Username.setText("username must contain at least 1 digit and alphabetic");
+        }//kurang username unik
 
+        if (et_Pass.getText().toString().length()==0){
+            et_Pass.setText("Password must be filled!");
+        } else if(et_Pass.getText().toString().length()<6){
+            et_Pass.setText("Please input you password minimal 6 characters!");
+        } else if(Pattern.compile(" (?=.*\\d)(?=.*[a-z])(?=.*[A-Z])").matcher(et_Pass.getText().toString()).find()){
+            et_Pass.setText("password must contain at least 1 lowercase letter, 1 uppercase letter and 1 digit");
+        }
+        
+        if(etConfirmPass.getText().toString().length()==0){
+            etConfirmPass.setText("Password must be filled!");
+        } else if(etConfirmPass.equals(et_Pass)){
+            etConfirmPass.setText("Password no same");
+        }
+
+        if (etPhone.getText().toString().length()==0){
+            etPhone.setText("Phone number be filled!");
+        } else if(etPhone.getText().toString().length()<10 || etPhone.getText().toString().length()>=12){
+            etPhone.setText("Please input your phone number between 10 and 12 character");
+        } else if(Pattern.compile("[0-9]").matcher(etPhone.getText().toString()).find()){
+
+        }
     }
 }

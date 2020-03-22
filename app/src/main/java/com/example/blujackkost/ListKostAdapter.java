@@ -2,17 +2,16 @@ package com.example.blujackkost;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.blujackkost.Model.DataKosModel;
 
 import java.util.ArrayList;
 
@@ -21,15 +20,15 @@ public class ListKostAdapter  extends RecyclerView.Adapter<ListKostAdapter.Categ
     private Context context;
     ItemListener itemListener;
 
-    ArrayList<Kost> getListKost(){
+    ArrayList<DataKosModel> getListKost(){
         return listKost;
     }
 
-    void setListKost(ArrayList<Kost> listKost){
+    void setListKost(ArrayList<DataKosModel> listKost){
         this.listKost=listKost;
     }
 
-    private ArrayList<Kost> listKost;
+    private ArrayList<DataKosModel> listKost;
 
     ListKostAdapter(Context context){
         this.context=context;
