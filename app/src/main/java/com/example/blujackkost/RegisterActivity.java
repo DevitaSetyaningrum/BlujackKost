@@ -142,6 +142,8 @@ public class RegisterActivity extends AppCompatActivity {
             // buat nampilin pesannya
         }
 
-        if ()
+        //if (tvDate.)
+
+      //  if()
     }
 }
