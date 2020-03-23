@@ -4,7 +4,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <ImageView
         android:id="@+id/img_item_photo"
         android:layout_width="55dp"
         android:layout_height="55dp"
@@ -19,24 +19,27 @@
         android:orientation="vertical">
 
         <TextView
+            android:layout_marginLeft="10dp"
             android:id="@+id/tvItemName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="5dp"/>
 
         <TextView
+            android:layout_marginLeft="10dp"
             android:id="@+id/tvItemPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="5dp"/>
 
         <TextView
+            android:layout_marginLeft="10dp"
             android:id="@+id/tvItemFacility"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="5dp"/>
 
     </LinearLayout>
 
