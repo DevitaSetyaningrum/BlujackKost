@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("pos", pos);
                 Toast.makeText(MainActivity.this, pos+"passing", Toast.LENGTH_SHORT).show();
                 startActivity(intent);
+                
             }
         });
     }
